@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Euphoria 2k25 Registration</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      margin: 10px 0;
+      color: #007BFF;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #555;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 5px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    button[type="submit"] {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    button[type="button"] {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    #deleteButton, #exportButton, .exportTypeButton, #printButton {
+      margin: 10px 5px;
+      padding: 10px 15px;
+      font-size: 14px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #28a745;
+      transition: background-color 0.3s ease;
+    }
+
+    #deleteButton:hover, #exportButton:hover, .exportTypeButton:hover, #printButton:hover {
+      background-color: #218838;
+    }
+
+    .exportTypeButton {
+      background-color: #17a2b8;
+    }
+
+    .exportTypeButton:hover {
+      background-color: #117a8b;
+    }
+
+    /* Form Styling */
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    form div {
+      margin-bottom: 15px;
+    }
+
+    /* Table Styling */
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      form {
+        padding: 15px;
+      }
+
+      button {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      table {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      form {
+        padding: 10px;
+      }
+
+      input, select {
+        font-size: 12px;
+      }
+
+      button {
+        font-size: 12px;
+      }
+
+      table {
+        font-size: 12px;
+      }
+
+      th, td {
+        padding: 8px;
+      }
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+</head>
+<body>
+
+  <h1>Euphoria 2K25</h1>
+  <h2>Tech and Management Fest</h2>
+  <h3>Offline Registration Portal</h3>
+
+  <!-- Registration Form -->
+  <form id="registrationForm" onsubmit="handleSubmit(event)">
+    <label for="eventType">Choose Event:</label>
+    <select id="eventType" required onchange="displayItems()">
+      <option value="">Select Event</option>
+      <option value="management">Management</option>
+      <option value="tech">Tech</option>
+      <option value="common">Common</option>
+    </select>
+
+    <div id="eventItems" style="display:none;">
+      <label for="eventItem">Select Item:</label>
+      <select id="eventItem" required onchange="updateTeamInput()">
+        <!-- Dynamically populated based on selected event -->
+      </select>
+    </div>
+
+    <div id="teamMembers" style="display:none;">
+      <h3>Team Members Details:</h3>
+      <label>Team Member 1 :</label>
+      <input type="text" id="teamMember1" placeholder="Team Member 1 Name" required>
+      <input type="text" id="phone1" placeholder="Phone Number" required>
+      <input type="text" id="college1" placeholder="College Name" required>
+
+      <div>
+        <input type="checkbox" id="autoFillCollege" onclick="autoFillCollegeName()">
+        <label for="autoFillCollege">Auto-fill college name for all team members</label>
+      </div>
+
+      <div id="additionalTeamMembers">
+        <!-- Additional team members will be populated here -->
+      </div>
+    </div>
+
+    <button type="submit">Register</button>
+    <button type="button" onclick="clearForm()">Clear Form</button>
+  </form>
+
+  <table id="dataTable" style="display:none;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Event Name</th>
+        <th>Item Name</th>
+        <th>Participants</th>
+        <th>Phone Numbers</th>
+        <th>College</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <button id="deleteButton" onclick="deleteLastEntry()">Delete Last Entry</button>
+  <button id="exportButton" onclick="exportToExcel()">Export All to Excel</button>
+  <button class="exportTypeButton" onclick="exportToExcelByType('management')">Export Management to Excel</button>
+  <button class="exportTypeButton" onclick="exportToExcelByType('tech')">Export Tech to Excel</button>
+  <button class="exportTypeButton" onclick="exportToExcelByType('common')">Export Common to Excel</button>
+  <button id="printButton" onclick="printEntries()">Print Entries</button>
+
+  <script>
+    let registrations = [];
+    let startingPoint = 1;
+
+    window.onload = function () {
+      const startingInput = prompt("Enter starting position (e.g., 001, 201, 301):");
+      if (startingInput && !isNaN(startingInput)) {
+        startingPoint = parseInt(startingInput);
+      } else {
+        alert("Invalid input. Starting point set to 001 by default.");
+        startingPoint = 1;
+      }
+    };
+
+    const managementItems = [
+    { name: 'no item selected', teamSize: 0 },
+      { name: 'Excelsior Elite', teamSize: 4 },
+      { name: 'Brand Blite', teamSize: 4 },
+      { name: 'Eureka', teamSize: 2 }
+    ];
+
+    const techItems = [
+    { name: 'no item selected', teamSize: 0 },
+      { name: 'DecodeX', teamSize: 1 },
+      { name: 'Bug Hunt', teamSize: 1 },
+      { name: 'Ideate Airena', teamSize: 2 }
+    ];
+
+    const commonItems = [
+    { name: 'no item selected', teamSize: 0 },
+      { name: 'IPL Auction', teamSize: 4 },
+      { name: 'Mystery Mavens', teamSize: 4 }
+    ];
+
+    function displayItems() {
+      const eventType = document.getElementById('eventType').value;
+      const eventItemDropdown = document.getElementById('eventItem');
+      const eventItemsDiv = document.getElementById('eventItems');
+      eventItemDropdown.innerHTML = '';
+      eventItemsDiv.style.display = 'none';
+
+      let items;
+      if (eventType === 'management') items = managementItems;
+      else if (eventType === 'tech') items = techItems;
+      else if (eventType === 'common') items = commonItems;
+
+      if (items) {
+        eventItemsDiv.style.display = 'block';
+        items.forEach(item => {
+          const option = document.createElement('option');
+          option.value = item.name;
+          option.textContent = item.name;
+          eventItemDropdown.appendChild(option);
+        });
+      }
+    }
+
+    function updateTeamInput() {
+      const eventType = document.getElementById('eventType').value;
+      const eventItem = document.getElementById('eventItem').value;
+      const teamMembersDiv = document.getElementById('teamMembers');
+      const additionalTeamMembersDiv = document.getElementById('additionalTeamMembers');
+      additionalTeamMembersDiv.innerHTML = '';
+
+      let teamSize = 1;
+      const items = eventType === 'management' ? managementItems : eventType === 'tech' ? techItems : commonItems;
+      const selectedItem = items.find(item => item.name === eventItem);
+      teamSize = selectedItem ? selectedItem.teamSize : 1;
+
+      teamMembersDiv.style.display = 'block';
+
+      for (let i = 2; i <= teamSize; i++) {
+        additionalTeamMembersDiv.innerHTML += `
+          <label>Team Member ${i}:</label>
+          <input type="text" id="teamMember${i}" placeholder="Team Member ${i} Name" required>
+          <input type="text" id="phone${i}" placeholder="Phone Number" required>
+          <input type="text" id="college${i}" placeholder="College Name" required>
+        `;
+      }
+    }
+
+    function autoFillCollegeName() {
+      const autoFill = document.getElementById('autoFillCollege').checked;
+      const college1 = document.getElementById('college1').value;
+
+      if (autoFill && college1) {
+        const teamSize = document.querySelectorAll('#additionalTeamMembers input').length / 3;
+        for (let i = 2; i <= teamSize + 1; i++) {
+          document.getElementById(`college${i}`).value = college1;
+        }
+      }
+    }
+
+    function generateEntryID(eventType, itemName) {
+      const prefix = eventType.charAt(0).toUpperCase();
+      const itemCode = itemName.slice(0, 3).toUpperCase();
+      const id = String(startingPoint).padStart(3, '0');
+      startingPoint++;
+      return `${prefix}-${itemCode}-${id}`;
+    }
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      const eventType = document.getElementById('eventType').value;
+      const eventItem = document.getElementById('eventItem').value;
+      const participants = [];
+      const phoneNumbers = [];
+      const college = document.getElementById('college1').value;
+
+      const teamSize = document.querySelectorAll('#additionalTeamMembers input').length / 3;
+      for (let i = 1; i <= teamSize + 1; i++) {
+        participants.push(document.getElementById(`teamMember${i}`).value);
+        phoneNumbers.push(document.getElementById(`phone${i}`).value);
+      }
+
+      const entryID = generateEntryID(eventType, eventItem);
+
+      const registration = {
+        id: entryID,
+        eventName: eventType,
+        itemName: eventItem,
+        participants: participants.join(', '),
+        phoneNumbers: phoneNumbers.join(', '),
+        college
+      };
+
+      registrations.push(registration);
+      updateTable();
+    }
+
+    function updateTable() {
+      const table = document.getElementById('dataTable');
+      const tbody = table.querySelector('tbody');
+      tbody.innerHTML = '';
+      table.style.display = registrations.length > 0 ? 'table' : 'none';
+
+      registrations.forEach((registration, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${registration.id}</td>
+          <td>${registration.eventName}</td>
+          <td>${registration.itemName}</td>
+          <td>${registration.participants}</td>
+          <td>${registration.phoneNumbers}</td>
+          <td>${registration.college}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function clearForm() {
+      document.getElementById('registrationForm').reset();
+      document.getElementById('eventItems').style.display = 'none';
+      document.getElementById('teamMembers').style.display = 'none';
+    }
+
+    function deleteLastEntry() {
+      if (registrations.length > 0) {
+        registrations.pop();
+        updateTable();
+      }
+    }
+
+    function exportToExcel() {
+      const worksheet = XLSX.utils.json_to_sheet(registrations);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Registrations");
+      XLSX.writeFile(workbook, "Registrations.xlsx");
+    }
+
+    function exportToExcelByType(type) {
+      const filteredData = registrations.filter(reg => reg.eventName === type);
+      const worksheet = XLSX.utils.json_to_sheet(filteredData);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, `${type} Registrations`);
+      XLSX.writeFile(workbook, `${type}_Registrations.xlsx`);
+    }
+
+    function printEntries() {
+  const type = prompt("Enter type of event to print (tech/management/common/all):").toLowerCase();
+  let filteredRegistrations = registrations;
+
+  if (type !== 'all') {
+    filteredRegistrations = registrations.filter(reg => reg.eventName === type);
+  }
+
+  if (filteredRegistrations.length === 0) {
+    alert("No data available for the selected type!");
+    return;
+  }
+
+  let printContent = `
+    <h3 style="text-align: center;">Euphoria 2k25</h3>
+    <h4 style="text-align: center;">Tech and Management Fest</h4>
+    <h5 style="text-align: center;">Offline Registration Portal</h5>
+    <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Event Name</th>
+          <th>Item Name</th>
+          <th>Participants</th>
+          <th>Phone Numbers</th>
+          <th>College</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+
+  filteredRegistrations.forEach(entry => {
+    printContent += `
+      <tr>
+        <td>${entry.id}</td>
+        <td>${entry.eventName}</td>
+        <td>${entry.itemName}</td>
+        <td><pre>${entry.participants}</pre></td>
+        <td><pre>${entry.phoneNumbers}</pre></td>
+        <td>${entry.college}</td>
+      </tr>
+    `;
+  });
+
+  printContent += `
+      </tbody>
+    </table>
+  `;
+
+  const newWindow = window.open();
+  newWindow.document.write(printContent);
+  newWindow.document.close();
+  newWindow.print();
+}
+
+    window.onload = function () {
+  const startingInput = prompt("Enter starting position (e.g., 001, 201, 301):");
+  if (startingInput && !isNaN(startingInput)) {
+    startingPoint = parseInt(startingInput);
+  } else {
+    alert("Invalid input. Starting point set to 001 by default.");
+    startingPoint = 1;
+  }
+};
+
+window.onbeforeunload = function () {
+  return "Are you sure you want to leave this page? Unsaved data will be lost.";
+};
+
+  </script>
+</body>
+</html>
