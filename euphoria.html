@@ -403,7 +403,7 @@ function exportToExcel() {
 }
 
 
-    function printEntries() {
+  function printEntries() {
   const type = prompt("Enter type of event to print (tech/management/common/all):").toLowerCase();
   let filteredRegistrations = registrations;
 
@@ -416,35 +416,33 @@ function exportToExcel() {
     return;
   }
 
+  // Dynamically set the heading for the event type
+  const eventTypeHeading = type === 'all' ? 'All Events' : `${type.charAt(0).toUpperCase() + type.slice(1)} Event`;
+
   let printContent = `
     <h3 style="text-align: center;">Euphoria 2k25</h3>
     <h4 style="text-align: center;">Tech and Management Fest</h4>
     <h5 style="text-align: center;">Offline Registration Portal</h5>
+    <h6 style="text-align: center; margin-top: 10px; color: gray;">Event Type: ${eventTypeHeading}</h6>
     <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
       <thead>
         <tr>
+          <th>No:</th>
           <th>ID</th>
-          
-          
           <th>Participants</th>
           <th>Phone Numbers</th>
-          
-          
-          
         </tr>
       </thead>
       <tbody>
   `;
 
-  filteredRegistrations.forEach(entry => {
+  filteredRegistrations.forEach((entry, index) => {
     printContent += `
       <tr>
+        <td>${index + 1}</td> <!-- Incremental number starting from 1 -->
         <td>${entry.id}</td>
-        
-       
         <td><pre>${entry.participants}</pre></td>
         <td><pre>${entry.phoneNumbers}</pre></td>
-        
       </tr>
     `;
   });
