@@ -4,184 +4,203 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Euphoria 2k25 Registration</title>
+  
   <style>
-   <style>
-    /* General Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
 
-    h1, h2, h3 {
-      text-align: center;
-      margin: 10px 0;
-      color: #007BFF;
-    }
+body {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  color: #33ff33;
+}
 
-    h1 {
-      font-size: 2.5em;
-      text-transform: uppercase;
-    }
+h1, h2, h3 {
+  text-align: center;
+  margin: 10px 0;
+  color: #33ff33;
+  text-shadow: 0 0 8px #00ff00;
+}
 
-    h2 {
-      font-size: 1.5em;
-      color: #555;
-    }
+h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
-    h3 {
-      font-size: 1.2em;
-    }
+h2, h3 {
+  font-size: 1.6em;
+}
 
-    label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-    }
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #ff3333;
+}
 
-    input, select {
-      width: calc(100% - 20px);
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box;
-      font-size: 14px;
-    }
+input, select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #33ff33;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  background-color: #000000;
+  color: #33ff33;
+  outline: none;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
-    input[type="checkbox"] {
-      width: auto;
-      margin-right: 5px;
-    }
+input:focus, select:focus {
+  border-color: #ff3333;
+  box-shadow: 0 0 10px #ff3333;
+}
 
-    button {
-      padding: 10px 15px;
-      font-size: 14px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
 
-    button:hover {
-      opacity: 0.9;
-    }
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 2px solid #33ff33;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #000000;
+  color: #33ff33;
+  transition: background-color 0.3s, transform 0.2s;
+}
 
-    button[type="submit"] {
-      background-color: #007BFF;
-      color: white;
-    }
+button:hover {
+  background-color: #33ff33;
+  color: #000000;
+  transform: scale(1.05);
+}
 
-    button[type="button"] {
-      background-color: #6c757d;
-      color: white;
-    }
+#deleteButton, #exportButton, .exportTypeButton, #printButton {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 2px solid #ff3333;
+  background-color: #000000;
+  color: #ff3333;
+}
 
-    #deleteButton, #exportButton, .exportTypeButton, #printButton {
-      margin: 10px 5px;
-      padding: 10px 15px;
-      font-size: 14px;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      background-color: #28a745;
-      transition: background-color 0.3s ease;
-    }
+#deleteButton:hover, #exportButton:hover, .exportTypeButton:hover, #printButton:hover {
+  background-color: #ff3333;
+  color: #000000;
+  transform: scale(1.05);
+}
 
-    #deleteButton:hover, #exportButton:hover, .exportTypeButton:hover, #printButton:hover {
-      background-color: #218838;
-    }
+/* Form Styling */
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #33ff33;
+  box-shadow: 0 0 20px rgba(51, 255, 51, 0.4);
+}
 
-    .exportTypeButton {
-      background-color: #17a2b8;
-    }
+form div {
+  margin-bottom: 15px;
+}
 
-    .exportTypeButton:hover {
-      background-color: #117a8b;
-    }
+/* Table Styling */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #33ff33;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(51, 255, 51, 0.2);
+}
 
-    /* Form Styling */
-    form {
-      max-width: 600px;
-      margin: 20px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #33ff33;
+  color: #33ff33;
+}
 
-    form div {
-      margin-bottom: 15px;
-    }
+th {
+  background-color: #000000;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
-    /* Table Styling */
-    table {
-      width: 90%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+tr:nth-child(even) {
+  background-color: #001a00;
+}
 
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border: 1px solid #ccc;
-    }
+tr:hover {
+  background-color: #003300;
+  color: #ff3333;
+  cursor: pointer;
+}
 
-    th {
-      background-color: #007BFF;
-      color: white;
-    }
+/* Responsive Design */
+@media (max-width: 768px) {
+  form {
+    padding: 15px;
+  }
 
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      form {
-        padding: 15px;
-      }
+  table {
+    font-size: 14px;
+  }
+}
 
-      button {
-        width: 100%;
-        margin: 10px 0;
-      }
+@media (max-width: 480px) {
+  form {
+    padding: 10px;
+  }
 
-      table {
-        font-size: 14px;
-      }
-    }
+  input, select {
+    font-size: 12px;
+  }
 
-    @media (max-width: 480px) {
-      form {
-        padding: 10px;
-      }
+  button {
+    font-size: 12px;
+  }
 
-      input, select {
-        font-size: 12px;
-      }
+  table {
+    font-size: 12px;
+  }
 
-      button {
-        font-size: 12px;
-      }
+  th, td {
+    padding: 8px;
+  }
+}
+#resetButton {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 2px solid #ff3333;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #000000;
+  color: #ff3333;
+  transition: background-color 0.3s, transform 0.2s;
+}
 
-      table {
-        font-size: 12px;
-      }
+#resetButton:hover {
+  background-color: #ff3333;
+  color: #000000;
+  transform: scale(1.05);
+}
 
-      th, td {
-        padding: 8px;
-      }
-    }
-  </style>
-  </style>
+
+</style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
 </head>
 <body>
@@ -259,17 +278,67 @@
 <button class="exportTypeButton" onclick="exportToExcelByType('tech')">Export Tech to Excel</button>
 <button class="exportTypeButton" onclick="exportToExcelByType('common')">Export Common to Excel</button>
 <button id="printButton" onclick="printEntries()">Print Entries</button>
+<button class="exportTypeButton" id="exportCSVButton" onclick="exportToCSVByEvent()">Export to CSV</button>
+<button id="resetButton">Reset Page: Be Carefull!!!</button>
 
 
 <script>
-   function deleteLastEntry() {
+  let registrations = JSON.parse(localStorage.getItem('registrations')) || [];
+  let startingPoint = parseInt(localStorage.getItem('startingPoint')) || 1;
+
+  function saveToLocalStorage() {
+    localStorage.setItem('registrations', JSON.stringify(registrations));
+    localStorage.setItem('startingPoint', startingPoint);
+  }
+
+  function deleteLastEntry() {
+    if (confirm("Are you sure you want to delete the last entry?")) {
       if (registrations.length > 0) {
         registrations.pop();
+        saveToLocalStorage();
         updateTable();
+      } else {
+        alert("No entries to delete!");
       }
     }
+  }
 
-    function exportToExcel() {
+  function handleSubmit(event) {
+    event.preventDefault();
+    const eventType = document.getElementById('eventType').value;
+    const eventItem = document.getElementById('eventItem').value;
+    const participants = [];
+    const phoneNumbers = [];
+    const college = document.getElementById('college1').value;
+    const payment = document.getElementById('payment').value;
+    const email = document.getElementById('email').value;
+
+    const teamSize = document.querySelectorAll('#additionalTeamMembers input').length / 3;
+    for (let i = 1; i <= teamSize + 1; i++) {
+      participants.push(document.getElementById(`teamMember${i}`).value);
+      phoneNumbers.push(document.getElementById(`phone${i}`).value);
+    }
+
+    const entryID = `${eventType.charAt(0).toUpperCase()}-${eventItem.slice(0, 3).toUpperCase()}-${startingPoint++}`;
+
+    const registration = {
+      id: entryID,
+      eventName: eventType,
+      itemName: eventItem,
+      participants: participants.map(name => name).join(','),
+      phoneNumbers: phoneNumbers.map(phone => phone).join(','),
+      college,
+      email,
+      payment,
+    };
+
+    registrations.push(registration);
+    saveToLocalStorage();
+    updateTable();
+    clearForm();
+    alert("Registration successful!");
+}
+function exportToExcel() {
       const worksheet = XLSX.utils.json_to_sheet(registrations);
       const workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, "Registrations");
@@ -283,6 +352,56 @@
       XLSX.utils.book_append_sheet(workbook, worksheet, `${type} Registrations`);
       XLSX.writeFile(workbook, `${type}_Registrations.xlsx`);
     }
+
+    function exportToCSVByEvent() {
+  // Prompt the user to select the event type
+  const eventType = prompt("Enter event type to export (tech/management/common/all):").toLowerCase();
+
+  if (!eventType) {
+    alert("Event type is required to proceed.");
+    return;
+  }
+
+  // Filter registrations based on the event type
+  let filteredData = registrations;
+  if (eventType !== "all") {
+    filteredData = registrations.filter(reg => reg.eventName.toLowerCase() === eventType);
+  }
+
+  // Check if there's data to export
+  if (filteredData.length === 0) {
+    alert(`No registrations found for the selected event type: ${eventType}`);
+    return;
+  }
+
+  // Convert the filtered data into CSV format
+  let csvContent = "data:text/csv;charset=utf-8,";
+  csvContent += "ID,Event Name,Item Name,Participants,Phone Numbers,College,Email,Payment\n"; // Header
+
+  filteredData.forEach(entry => {
+    const row = [
+      entry.id,
+      entry.eventName,
+      entry.itemName,
+      `"${entry.participants}"`, // Wrap in quotes for multi-line fields
+      `"${entry.phoneNumbers}"`,
+      entry.college,
+      entry.email,
+      entry.payment
+    ].join(",");
+    csvContent += row + "\n";
+  });
+
+  // Create a link to download the CSV file
+  const encodedUri = encodeURI(csvContent);
+  const link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", `${eventType}_Registrations.csv`);
+  document.body.appendChild(link); // Required for Firefox
+  link.click();
+  document.body.removeChild(link); // Clean up
+}
+
 
     function printEntries() {
   const type = prompt("Enter type of event to print (tech/management/common/all):").toLowerCase();
@@ -305,13 +424,13 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>Event Name</th>
-          <th>Item Name</th>
+          
+          
           <th>Participants</th>
           <th>Phone Numbers</th>
-          <th>College</th>
-          <th>Email ID</th>
-          <th>Payment</th>
+          
+          
+          
         </tr>
       </thead>
       <tbody>
@@ -321,13 +440,11 @@
     printContent += `
       <tr>
         <td>${entry.id}</td>
-        <td>${entry.eventName}</td>
-        <td>${entry.itemName}</td>
+        
+       
         <td><pre>${entry.participants}</pre></td>
         <td><pre>${entry.phoneNumbers}</pre></td>
-        <td>${entry.college}</td>
-        <td>${entry.email}</td>
-        <td>${entry.payment}</td>
+        
       </tr>
     `;
   });
@@ -353,10 +470,7 @@
         }
       }
     }
-  let registrations = [];
-  let startingPoint = 1;
-
-  const managementItems = [
+    const managementItems = [
     { name: 'no item selected', teamSize: 0 },
     { name: 'Excelsior Elite', teamSize: 4 },
     { name: 'Brand Blite', teamSize: 4 },
@@ -435,41 +549,6 @@
       }
     }
   }
-
-  function handleSubmit(event) {
-  event.preventDefault();
-  const eventType = document.getElementById('eventType').value;
-  const eventItem = document.getElementById('eventItem').value;
-  const participants = [];
-  const phoneNumbers = [];
-  const college = document.getElementById('college1').value;
-  const payment = document.getElementById('payment').value;
-  const email = document.getElementById('email').value;
-
-  const teamSize = document.querySelectorAll('#additionalTeamMembers input').length / 3;
-  for (let i = 1; i <= teamSize + 1; i++) {
-    participants.push(document.getElementById(`teamMember${i}`).value);
-    phoneNumbers.push(document.getElementById(`phone${i}`).value);
-  }
-
-  const entryID = `${eventType.charAt(0).toUpperCase()}-${eventItem.slice(0, 3).toUpperCase()}-${startingPoint++}`;
-
-  const registration = {
-    id: entryID,
-    eventName: eventType,
-    itemName: eventItem,
-    participants: participants.map(name => name).join('<br>'),
-    phoneNumbers: phoneNumbers.map(phone => phone).join('<br>'),
-    college,
-    email,
-    payment
-  };
-
-  registrations.push(registration);
-  updateTable();
-}
-
-
   function updateTable() {
   const table = document.getElementById('dataTable');
   const tbody = table.querySelector('tbody');
@@ -499,19 +578,47 @@
     document.getElementById('teamMembers').style.display = 'none';
   }
   window.onload = function () {
-  const startingInput = prompt("Enter starting position (e.g., 101, 201, 301):");
-  if (startingInput && !isNaN(startingInput)) {
-    startingPoint = parseInt(startingInput);
-  } else {
-    alert("Invalid input. Starting point set to 001 by default.");
-    startingPoint = 1;
-  }
+    // Retrieve data from localStorage
+    const storedRegistrations = JSON.parse(localStorage.getItem('registrations')) || [];
+    const storedStartingPoint = localStorage.getItem('startingPoint');
+
+    if (storedRegistrations.length > 0) {
+        // Load registrations and update the table
+        registrations = storedRegistrations;
+        updateTable();
+
+        // Set the starting point to the last entry's ID + 1
+        const lastEntry = storedRegistrations[storedRegistrations.length - 1];
+        const lastEntryId = parseInt(lastEntry.id.split('-').pop(), 10); // Extract numeric part of ID
+        startingPoint = lastEntryId + 1;
+    }  else {
+        // Prompt the user for the starting point if no entries exist
+        const startingInput = prompt("Enter starting position (e.g., 101, 201, 301):");
+        if (startingInput && !isNaN(startingInput)) {
+            startingPoint = parseInt(startingInput, 10);
+        } else {
+            alert("Invalid input. Starting point set to 1 by default.");
+            startingPoint = 1;
+        }
+    }
+
+    saveToLocalStorage(); // Save the updated starting point
 };
+
+
 
 window.onbeforeunload = function () {
   return "Are you sure you want to leave this page? Unsaved data will be lost. Please export to excel before leaving!!";
 };
-</script>
+document.getElementById('resetButton').addEventListener('click', function () {
+  if (confirm('Are you sure you want to reset the page? This will clear all data.')) {
+    // Clear local storage
+    localStorage.clear();
+    // Reload the page
+    location.reload();
+  }
+});
 
+</script>
 </body>
 </html>
