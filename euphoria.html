@@ -6,108 +6,87 @@
   <title>Euphoria 2k25 Registration</title>
   
   <style>
-
+  
+/* General Body Styling */
 body {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #000000;
-  color: #33ff33;
+  background-color: #e8e5e5;
+  color: #333;
 }
 
+/* Headings */
 h1, h2, h3 {
   text-align: center;
   margin: 10px 0;
-  color: #33ff33;
-  text-shadow: 0 0 8px #00ff00;
+  color: #007BFF;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.5em;
   text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-h2, h3 {
-  font-size: 1.6em;
-}
-
-label {
-  font-weight: bold;
-  display: block;
   margin-bottom: 5px;
-  color: #ff3333;
 }
 
-input, select {
-  width: calc(100% - 20px);
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 2px solid #33ff33;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-size: 14px;
-  background-color: #000000;
-  color: #33ff33;
-  outline: none;
-  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+h2 {
+  font-size: 1.5em;
+  color: #555;
 }
 
-input:focus, select:focus {
-  border-color: #ff3333;
-  box-shadow: 0 0 10px #ff3333;
-}
-
-input[type="checkbox"] {
-  width: auto;
-  margin-right: 5px;
-}
-
-button {
-  padding: 10px 15px;
-  font-size: 14px;
-  border: 2px solid #33ff33;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #000000;
-  color: #33ff33;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-button:hover {
-  background-color: #33ff33;
-  color: #000000;
-  transform: scale(1.05);
-}
-
-#deleteButton, #exportButton, .exportTypeButton, #printButton {
-  margin: 10px 5px;
-  padding: 10px 15px;
-  font-size: 14px;
-  border: 2px solid #ff3333;
-  background-color: #000000;
-  color: #ff3333;
-}
-
-#deleteButton:hover, #exportButton:hover, .exportTypeButton:hover, #printButton:hover {
-  background-color: #ff3333;
-  color: #000000;
-  transform: scale(1.05);
+h3 {
+  font-size: 1.2em;
+  margin-top: 10px;
 }
 
 /* Form Styling */
 form {
-  max-width: 600px;
+  max-width: 500px;
   margin: 20px auto;
-  background: rgba(0, 0, 0, 0.8);
+  background: white;
   padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #33ff33;
-  box-shadow: 0 0 20px rgba(51, 255, 51, 0.4);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-form div {
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+form input, form select {
+  width: calc(100% - 20px);
+  padding: 10px;
   margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+form button[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+form button[type="reset"] {
+  background-color: #6c757d;
+  color: #fff;
 }
 
 /* Table Styling */
@@ -115,35 +94,149 @@ table {
   width: 90%;
   margin: 20px auto;
   border-collapse: collapse;
-  background: rgba(0, 0, 0, 0.9);
-  border: 2px solid #33ff33;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(51, 255, 51, 0.2);
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-th, td {
+table th, table td {
   padding: 10px;
   text-align: left;
-  border: 1px solid #33ff33;
-  color: #33ff33;
+  border: 1px solid #ccc;
 }
 
-th {
-  background-color: #000000;
-  font-weight: bold;
-  text-transform: uppercase;
+table th {
+  background-color: #007BFF;
+  color: white;
 }
 
-tr:nth-child(even) {
-  background-color: #001a00;
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
-tr:hover {
-  background-color: #003300;
-  color: #ff3333;
+/* Scroll Buttons */
+.scroll-button {
+  position: fixed;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+#scrollToBottom {
+  bottom: 20px;
+  right: 20px;
+}
+
+#scrollToTop {
+  bottom: 70px;
+  right: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #4CAF50;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.insta-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.insta-link img {
+  width: 24px;
+  height: 24px;
+}
+
+.insta-link a {
+  color: #E1306C;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.insta-link a:hover {
+  color: #FF4081;
+}
+/* General Footer Button Styling */
+footer button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer button:hover {
+  transform: scale(1.05);
+}
+
+footer button:active {
+  transform: scale(1);
+}
+
+/* Specific Styling for Reset Button */
+footer .reset-button {
+  background-color: #007BFF; /* Bootstrap red */
+}
+
+footer .reset-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+footer .reset-button:active {
+  background-color: #a71d2a; /* Even darker red when clicked */
+}
+
+/* Disabled Button Styling */
+footer button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Responsive Footer Buttons */
+@media (max-width: 768px) {
+  footer button {
+    width: calc(100% - 20px); /* Full-width button */
+    margin: 10px auto;       /* Center margin */
+    font-size: 13px;         /* Adjust text size */
+  }
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -151,13 +244,17 @@ tr:hover {
     padding: 15px;
   }
 
-  button {
+  form button {
     width: 100%;
-    margin: 10px 0;
+    margin-bottom: 10px;
   }
 
   table {
     font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
   }
 }
 
@@ -171,43 +268,47 @@ tr:hover {
   }
 
   button {
+    padding: 8px;
     font-size: 12px;
+    border-radius: 4px;
   }
 
   table {
     font-size: 12px;
   }
 
-  th, td {
-    padding: 8px;
+  footer {
+    font-size: 12px;
   }
+
+  .insta-link img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .insta-link a {
+    font-size: 12px;
+  }
+  /* Initially hide scroll buttons */
+
 }
-#resetButton {
-  padding: 10px 15px;
-  font-size: 14px;
-  border: 2px solid #ff3333;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #000000;
-  color: #ff3333;
-  transition: background-color 0.3s, transform 0.2s;
+#scrollToTop, #scrollToBottom {
+  display: none;
+
 }
 
-#resetButton:hover {
-  background-color: #ff3333;
-  color: #000000;
-  transform: scale(1.05);
-}
 
 
-</style>
+  </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
 </head>
 <body>
 
 <h1>Euphoria 2K25</h1>
 <h2>Tech and Management Fest</h2>
-<h3>Offline Registration Portal</h3>
+<h2>Marthoma Institute of Information Technology</h2>
+<h3>Offline Registration Portal 1.0</h3>
+
 
 <!-- Registration Form -->
 <form id="registrationForm" onsubmit="handleSubmit(event)">
@@ -257,6 +358,10 @@ tr:hover {
   <button type="button" onclick="clearForm()">Clear Form</button>
 </form>
 
+<button id="scrollToBottom" class="scroll-button">Go to Bottom</button>
+<button id="scrollToTop" class="scroll-button">Go to Top</button>  
+
+
 <table id="dataTable" style="display:none;">
   <thead>
     <tr>
@@ -272,17 +377,73 @@ tr:hover {
   </thead>
   <tbody></tbody>
 </table>
-<button id="deleteButton" onclick="deleteLastEntry()">Delete Last Entry</button>
-<button id="exportButton" onclick="exportToExcel()">Export All to Excel</button>
-<button class="exportTypeButton" onclick="exportToExcelByType('management')">Export Management to Excel</button>
-<button class="exportTypeButton" onclick="exportToExcelByType('tech')">Export Tech to Excel</button>
-<button class="exportTypeButton" onclick="exportToExcelByType('common')">Export Common to Excel</button>
-<button id="printButton" onclick="printEntries()">Print Entries</button>
-<button class="exportTypeButton" id="exportCSVButton" onclick="exportToCSVByEvent()">Export to CSV</button>
-<button id="resetButton">Reset Page: Be Carefull!!!</button>
 
+
+
+<!-- Footer -->
+<footer>
+  
+  <div class="footer-buttons">
+  <button id="deleteButton" onclick="deleteLastEntry()">Delete Last Entry( page will reload to take effect) </button>
+<button id="exportButton" onclick="exportToExcel()">Export Data to Excel</button>
+
+<button id="printButton" onclick="printEntries()">Print Data by Type</button>
+
+<button class="reset-button"  id="resetButton">Reset All Data</button>
+
+<div class="footer-content">
+  
+    <p>Website developed by Hari R Chandran, student of MCA batch 2024-2026, MIIT, Ayoor.</p>
+    
+    <div class="insta-link">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+      <a href="https://www.instagram.com/hari_r_c?igsh=MTNsazJzdXJodW5uZQ==" target="_blank">Connect on Instagram</a>
+    </div>
+  </div>
+</footer>
 
 <script>
+// Scroll to Top Button
+const scrollToTopButton = document.getElementById('scrollToTop');
+const scrollToBottomButton = document.getElementById('scrollToBottom');
+
+// Function to check if buttons should be shown or hidden
+function toggleScrollButtons() {
+  const scrollPosition = window.scrollY;
+  const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+  // Show the 'scroll to top' button if scrolled down
+  if (scrollPosition > 0) {
+    scrollToTopButton.style.display = 'block';
+  } else {
+    scrollToTopButton.style.display = 'none';
+  }
+
+  // Show the 'scroll to bottom' button if not at the bottom
+  if (scrollPosition < pageHeight) {
+    scrollToBottomButton.style.display = 'block';
+  } else {
+    scrollToBottomButton.style.display = 'none';
+  }
+}
+
+// Event listeners for scroll buttons
+scrollToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+scrollToBottomButton.addEventListener('click', () => {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+});
+
+// Listen to scroll events to toggle the buttons
+window.addEventListener('scroll', toggleScrollButtons);
+
+// Initial check on page load
+toggleScrollButtons();
+
+
+  
   let registrations = JSON.parse(localStorage.getItem('registrations')) || [];
   let startingPoint = parseInt(localStorage.getItem('startingPoint')) || 1;
 
@@ -290,13 +451,76 @@ tr:hover {
     localStorage.setItem('registrations', JSON.stringify(registrations));
     localStorage.setItem('startingPoint', startingPoint);
   }
+  function autoFillCollegeName() {
+      const autoFill = document.getElementById('autoFillCollege').checked;
+      const college1 = document.getElementById('college1').value;
+
+      if (autoFill && college1) {
+        const teamSize = document.querySelectorAll('#additionalTeamMembers input').length / 3;
+        for (let i = 2; i <= teamSize + 1; i++) {
+          document.getElementById(`college${i}`).value = college1;
+        }
+      }
+    }
+    const managementItems = [
+    { name: 'no item selected', teamSize: 0 },
+    { name: 'Excelsior Elite', teamSize: 4 },
+    { name: 'Brand Blite', teamSize: 4 },
+    { name: 'Eureka', teamSize: 2 }
+  ];
+
+  const techItems = [
+    { name: 'no item selected', teamSize: 0 },
+    { name: 'DecodeX', teamSize: 1 },
+    { name: 'Bug Bounty', teamSize: 1 },
+    { name: 'Ideate Airena', teamSize: 2 },
+    { name: 'All Items', teamSize: 2 }
+  ];
+
+  const commonItems = [
+    { name: 'no item selected', teamSize: 0 },
+    { name: 'IPL Auction', teamSize: 4 },
+    { name: 'Mystery Mavens', teamSize: 4 }
+  ];
+
+  function displayItems() {
+    const eventType = document.getElementById('eventType').value;
+    const eventItemDropdown = document.getElementById('eventItem');
+    const eventItemsDiv = document.getElementById('eventItems');
+    eventItemDropdown.innerHTML = '';
+    eventItemsDiv.style.display = 'none';
+
+    let items;
+    if (eventType === 'management') items = managementItems;
+    else if (eventType === 'tech') items = techItems;
+    else if (eventType === 'common') items = commonItems;
+
+    if (items) {
+      eventItemsDiv.style.display = 'block';
+      items.forEach(item => {
+        const option = document.createElement('option');
+        option.value = item.name;
+        option.textContent = item.name;
+        eventItemDropdown.appendChild(option);
+      });
+    }
+  }
+
+  function reloadPage() {
+  location.reload(); // Reloads the current page
+}
+
 
   function deleteLastEntry() {
     if (confirm("Are you sure you want to delete the last entry?")) {
       if (registrations.length > 0) {
         registrations.pop();
         saveToLocalStorage();
+        
         updateTable();
+        reloadPage()
+        alert("Last entry deleted successfully!!")
+        
       } else {
         alert("No entries to delete!");
       }
@@ -333,77 +557,32 @@ tr:hover {
     };
 
     registrations.push(registration);
+    
     saveToLocalStorage();
     updateTable();
     clearForm();
     alert("Registration successful!");
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
 }
+
+
 function exportToExcel() {
+  if(
+    confirm("The full data will be downloaded as excel format. Do you wish to proceed?")
+  ){
+ 
       const worksheet = XLSX.utils.json_to_sheet(registrations);
       const workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, "Registrations");
       XLSX.writeFile(workbook, "Registrations.xlsx");
     }
-
-    function exportToExcelByType(type) {
-      const filteredData = registrations.filter(reg => reg.eventName === type);
-      const worksheet = XLSX.utils.json_to_sheet(filteredData);
-      const workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, worksheet, `${type} Registrations`);
-      XLSX.writeFile(workbook, `${type}_Registrations.xlsx`);
-    }
-
-    function exportToCSVByEvent() {
-  // Prompt the user to select the event type
-  const eventType = prompt("Enter event type to export (tech/management/common/all):").toLowerCase();
-
-  if (!eventType) {
-    alert("Event type is required to proceed.");
-    return;
   }
 
-  // Filter registrations based on the event type
-  let filteredData = registrations;
-  if (eventType !== "all") {
-    filteredData = registrations.filter(reg => reg.eventName.toLowerCase() === eventType);
-  }
-
-  // Check if there's data to export
-  if (filteredData.length === 0) {
-    alert(`No registrations found for the selected event type: ${eventType}`);
-    return;
-  }
-
-  // Convert the filtered data into CSV format
-  let csvContent = "data:text/csv;charset=utf-8,";
-  csvContent += "ID,Event Name,Item Name,Participants,Phone Numbers,College,Email,Payment\n"; // Header
-
-  filteredData.forEach(entry => {
-    const row = [
-      entry.id,
-      entry.eventName,
-      entry.itemName,
-      `"${entry.participants}"`, // Wrap in quotes for multi-line fields
-      `"${entry.phoneNumbers}"`,
-      entry.college,
-      entry.email,
-      entry.payment
-    ].join(",");
-    csvContent += row + "\n";
-  });
-
-  // Create a link to download the CSV file
-  const encodedUri = encodeURI(csvContent);
-  const link = document.createElement("a");
-  link.setAttribute("href", encodedUri);
-  link.setAttribute("download", `${eventType}_Registrations.csv`);
-  document.body.appendChild(link); // Required for Firefox
-  link.click();
-  document.body.removeChild(link); // Clean up
-}
 
 
-  function printEntries() {
+
+function printEntries() {
   const type = prompt("Enter type of event to print (tech/management/common/all):").toLowerCase();
   let filteredRegistrations = registrations;
 
@@ -419,98 +598,61 @@ function exportToExcel() {
   // Dynamically set the heading for the event type
   const eventTypeHeading = type === 'all' ? 'All Events' : `${type.charAt(0).toUpperCase() + type.slice(1)} Event`;
 
+  // Group by characters between the hyphens in the ID
+  const groupedRegistrations = filteredRegistrations.reduce((acc, reg) => {
+    const middlePart = reg.id.split('-')[1]; // Extract the part between the hyphens
+    acc[middlePart] = acc[middlePart] || [];
+    acc[middlePart].push(reg);
+    return acc;
+  }, {});
+
   let printContent = `
     <h3 style="text-align: center;">Euphoria 2k25</h3>
     <h4 style="text-align: center;">Tech and Management Fest</h4>
     <h5 style="text-align: center;">Offline Registration Portal</h5>
     <h6 style="text-align: center; margin-top: 10px; color: gray;">Event Type: ${eventTypeHeading}</h6>
-    <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-      <thead>
-        <tr>
-          <th>No:</th>
-          <th>ID</th>
-          <th>Participants</th>
-          <th>Phone Numbers</th>
-        </tr>
-      </thead>
-      <tbody>
   `;
 
-  filteredRegistrations.forEach((entry, index) => {
+  Object.keys(groupedRegistrations).forEach(groupKey => {
     printContent += `
-      <tr>
-        <td>${index + 1}</td> <!-- Incremental number starting from 1 -->
-        <td>${entry.id}</td>
-        <td><pre>${entry.participants}</pre></td>
-        <td><pre>${entry.phoneNumbers}</pre></td>
-      </tr>
+      <h5 style="text-align: left; margin-top: 20px; color: black;">Item: ${groupKey.toUpperCase()}</h5>
+      <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+        <thead>
+          <tr>
+            <th>No:</th>
+            <th>ID</th>
+            <th>Participants</th>
+            <th>Phone Numbers</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    groupedRegistrations[groupKey].forEach((entry, index) => {
+      printContent += `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${entry.id}</td>
+          <td><pre>${entry.participants}</pre></td>
+          <td><pre>${entry.phoneNumbers}</pre></td>
+        </tr>
+      `;
+    });
+
+    printContent += `
+        </tbody>
+      </table>
     `;
   });
-
-  printContent += `
-      </tbody>
-    </table>
-  `;
 
   const newWindow = window.open();
   newWindow.document.write(printContent);
   newWindow.document.close();
   newWindow.print();
 }
-  function autoFillCollegeName() {
-      const autoFill = document.getElementById('autoFillCollege').checked;
-      const college1 = document.getElementById('college1').value;
 
-      if (autoFill && college1) {
-        const teamSize = document.querySelectorAll('#additionalTeamMembers input').length / 3;
-        for (let i = 2; i <= teamSize + 1; i++) {
-          document.getElementById(`college${i}`).value = college1;
-        }
-      }
-    }
-    const managementItems = [
-    { name: 'no item selected', teamSize: 0 },
-    { name: 'Excelsior Elite', teamSize: 4 },
-    { name: 'Brand Blite', teamSize: 4 },
-    { name: 'Eureka', teamSize: 2 }
-  ];
 
-  const techItems = [
-    { name: 'no item selected', teamSize: 0 },
-    { name: 'DecodeX', teamSize: 1 },
-    { name: 'Bug Bounty', teamSize: 1 },
-    { name: 'Ideate Airena', teamSize: 2 },
-    { name: 'All Items', teamSize: 1 }
-  ];
-
-  const commonItems = [
-    { name: 'no item selected', teamSize: 0 },
-    { name: 'IPL Auction', teamSize: 4 },
-    { name: 'Mystery Mavens', teamSize: 4 }
-  ];
-
-  function displayItems() {
-    const eventType = document.getElementById('eventType').value;
-    const eventItemDropdown = document.getElementById('eventItem');
-    const eventItemsDiv = document.getElementById('eventItems');
-    eventItemDropdown.innerHTML = '';
-    eventItemsDiv.style.display = 'none';
-
-    let items;
-    if (eventType === 'management') items = managementItems;
-    else if (eventType === 'tech') items = techItems;
-    else if (eventType === 'common') items = commonItems;
-
-    if (items) {
-      eventItemsDiv.style.display = 'block';
-      items.forEach(item => {
-        const option = document.createElement('option');
-        option.value = item.name;
-        option.textContent = item.name;
-        eventItemDropdown.appendChild(option);
-      });
-    }
-  }
+  
 
   function updateTeamInput() {
     const eventType = document.getElementById('eventType').value;
@@ -547,7 +689,47 @@ function exportToExcel() {
       }
     }
   }
-  function updateTable() {
+  
+
+
+  function clearForm() {
+    document.getElementById('registrationForm').reset();
+    document.getElementById('eventItems').style.display = 'none';
+    document.getElementById('teamMembers').style.display = 'none';
+  }
+  window.onload = function () {
+    // Retrieve data from localStorage
+    const storedRegistrations = JSON.parse(localStorage.getItem('registrations')) || [];
+    const storedStartingPoint = localStorage.getItem('startingPoint');
+
+    if (storedRegistrations.length > 0) {
+        // Load registrations and update the table
+        registrations = storedRegistrations;
+        
+
+        // Set the starting point to the last entry's ID + 1
+        const lastEntry = storedRegistrations[storedRegistrations.length - 1];
+        const lastEntryId = parseInt(lastEntry.id.split('-').pop(), 10); // Extract numeric part of ID
+        startingPoint = lastEntryId + 1;
+    }  else {
+        // Prompt the user for the starting point if no entries exist
+        const startingInput = prompt("Enter starting number for registration eg:001,101,201,etc:");
+        if (startingInput && !isNaN(startingInput)) {
+            startingPoint = parseInt(startingInput, 10);
+        } 
+        else if (storedStartingPoint) {
+        // Use saved starting point if no entries exist
+        startingPoint = parseInt(storedStartingPoint, 10);
+        }else {
+            alert("Invalid input. Starting point set to 1 by default.");
+            startingPoint = 1;
+        }
+    }
+    updateTable();
+    saveToLocalStorage();
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Save the updated starting point
+};
+function updateTable() {
   const table = document.getElementById('dataTable');
   const tbody = table.querySelector('tbody');
   tbody.innerHTML = '';
@@ -568,40 +750,6 @@ function exportToExcel() {
     tbody.appendChild(row);
   });
 }
-
-
-  function clearForm() {
-    document.getElementById('registrationForm').reset();
-    document.getElementById('eventItems').style.display = 'none';
-    document.getElementById('teamMembers').style.display = 'none';
-  }
-  window.onload = function () {
-    // Retrieve data from localStorage
-    const storedRegistrations = JSON.parse(localStorage.getItem('registrations')) || [];
-    const storedStartingPoint = localStorage.getItem('startingPoint');
-
-    if (storedRegistrations.length > 0) {
-        // Load registrations and update the table
-        registrations = storedRegistrations;
-        updateTable();
-
-        // Set the starting point to the last entry's ID + 1
-        const lastEntry = storedRegistrations[storedRegistrations.length - 1];
-        const lastEntryId = parseInt(lastEntry.id.split('-').pop(), 10); // Extract numeric part of ID
-        startingPoint = lastEntryId + 1;
-    }  else {
-        // Prompt the user for the starting point if no entries exist
-        const startingInput = prompt("Enter starting position (e.g., 101, 201, 301):");
-        if (startingInput && !isNaN(startingInput)) {
-            startingPoint = parseInt(startingInput, 10);
-        } else {
-            alert("Invalid input. Starting point set to 1 by default.");
-            startingPoint = 1;
-        }
-    }
-
-    saveToLocalStorage(); // Save the updated starting point
-};
 
 
 
