@@ -211,15 +211,15 @@ footer button:active {
 
 /* Specific Styling for Reset Button */
 footer .reset-button {
-  background-color: #007BFF; /* Bootstrap red */
+  background-color: #ff0000; /* Bootstrap red */
 }
 
 footer .reset-button:hover {
-  background-color: #c82333; /* Darker red on hover */
+  background-color: #f17481; /* Darker red on hover */
 }
 
 footer .reset-button:active {
-  background-color: #a71d2a; /* Even darker red when clicked */
+  background-color: #851a24; /* Even darker red when clicked */
 }
 
 /* Disabled Button Styling */
@@ -289,12 +289,131 @@ footer button:disabled {
   .insta-link a {
     font-size: 12px;
   }
-  /* Initially hide scroll buttons */
+}
+/* General Styles for Buttons */
+.scroll-button {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right edge */
+  background-color: #28a745; /* Green color */
+  color: white;
+  border: none;
+  border-radius: 5px; /* Slightly rounded corners */
+  padding: 10px 20px; /* Padding for better button shape */
+  font-size: 16px; /* Text size */
+  display: none; /* Initially hidden */
+  z-index: 1000; /* Ensure buttons are on top */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Buttons */
+.scroll-button:hover {
+  background-color: #218838; /* Darker shade for hover (green) */
+}
+
+/* For large screens (laptops and desktops) */
+@media (min-width: 768px) {
+  .scroll-button {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: auto; /* Remove fixed width for auto sizing */
+  }
+
 
 }
-#scrollToTop, #scrollToBottom {
-  display: none;
 
+/* For mobile screens (less than 768px) */
+@media (max-width: 768px) {
+  .scroll-button {
+    bottom: 10px; /* Slightly closer to the bottom for better touch access */
+    right: 10px; /* Adjust position for mobile */
+    padding: 8px 16px; /* Slightly smaller padding for mobile */
+    font-size: 14px; /* Smaller font size for mobile */
+    display: block; /* Ensure buttons are always visible */
+  }
+
+  .scroll-button.up,
+  .scroll-button.down {
+    width: 100px; /* Fixed width for both buttons */
+  }
+}
+/* General Styles for Buttons */
+.scroll-button {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right edge */
+  background-color: #28a745; /* Default green color for both buttons */
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50px; /* Slightly rounded corners */
+  padding: 10px 20px; /* Padding for better button shape */
+  font-size: 16px; /* Text size */
+  display: none; /* Initially hidden */
+  z-index: 1000; /* Ensure buttons are on top */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Buttons */
+.scroll-button:hover {
+  background-color: #218838; /* Darker shade for hover (green) */
+}
+
+/* Styling specifically for the "Up" button */
+.scroll-button.up {
+  background-color: #07f7ff; /* Blue color for "Up" button */
+  right: 20px; /* Position to the right of the screen */
+  bottom: 20px; /* Distance from the bottom */
+}
+
+/* Styling specifically for the "Down" button */
+.scroll-button.down {
+  background-color: #07f7ff; /* Yellow color for "Down" button */
+  right: 20px; /* Position to the right of the screen */
+  bottom: 80px; /* Slightly above the "Up" button */
+}
+
+/* For large screens (laptops and desktops) */
+@media (min-width: 768px) {
+  .scroll-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: auto; /* Remove fixed width for auto sizing */
+  }
+
+  .scroll-button.up {
+    background-color:#07f7ff; /* Blue for "Up" */
+  }
+
+  .scroll-button.down {
+    background-color: #07f7ff; /* Yellow for "Down" */
+  }
+}
+
+/* For mobile screens (less than 768px) */
+@media (max-width: 768px) {
+  .scroll-button {
+    bottom: 10px; /* Slightly closer to the bottom for better touch access */
+    right: 10px; /* Adjust position for mobile */
+    padding: 8px 16px; /* Slightly smaller padding for mobile */
+    font-size: 14px; /* Smaller font size for mobile */
+    display: block; /* Ensure buttons are always visible */
+  }
+
+  .scroll-button.up {
+    bottom: 10px; /* Bottom position for "Up" button */
+    background-color:#07f7ff; /* Blue for "Up" */
+  }
+
+  .scroll-button.down {
+    bottom: 60px; /* Position it slightly above "Up" button */
+    background-color:#07f7ff; /* Yellow for "Down" */
+  }
 }
 
 
@@ -358,8 +477,11 @@ footer button:disabled {
   <button type="button" onclick="clearForm()">Clear Form</button>
 </form>
 
-<button id="scrollToBottom" class="scroll-button">Go to Bottom</button>
-<button id="scrollToTop" class="scroll-button">Go to Top</button>  
+<!-- Scroll Buttons with Text for "Up" and "Down" -->
+<button id="scrollToBottom" class="scroll-button down">Down</button> <!-- "Down" button -->
+<button id="scrollToTop" class="scroll-button up">Up</button> <!-- "Up" button -->
+
+
 
 
 <table id="dataTable" style="display:none;">
@@ -441,6 +563,9 @@ window.addEventListener('scroll', toggleScrollButtons);
 
 // Initial check on page load
 toggleScrollButtons();
+
+
+
 
 
   
