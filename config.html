@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configure Registration Page</title>
+  <style>
+   /* General Page Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #acacac;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Headings */
+h1, h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin: 0 0 10px;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px 20px;
+  margin: 0 auto 20px auto;
+  max-width: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+form h2 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+/* Labels and Inputs */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+input, select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* Radio Buttons - Small styling adjustments */
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 8px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+button[type="submit"] {
+  background-color: #2980b9;
+  color: #fff;
+}
+button[type="submit"]:hover {
+  background-color: #1c5980;
+}
+button[type="button"] {
+  background-color: #6c757d;
+  color: #fff;
+}
+button[type="button"]:hover {
+  background-color: #545b62;
+}
+
+.reset-button {
+      background-color: red;
+      color: white;
+    }
+
+    .reset-button:hover {
+      background-color: darkred;
+    }
+    .sp-button {
+      background-color: rgb(101, 101, 101);
+      color: white;
+    }
+
+    .sp-button:hover {
+      background-color: rgb(29, 28, 28);
+    }
+    .finall-button:hover{
+      background-color: #005915;
+    }
+    .finall-button{
+      background-color: #00b129;
+      color: #fff;
+      
+    }
+
+/* Event Configuration Section */
+.event-config {
+  margin-bottom: 20px;
+}
+
+/* Smaller forms for admin configuration */
+input, select, button {
+  max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  form {
+    padding: 15px;
+    max-width: 90%;
+  }
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+}
+
+.readme-box {
+    background-color: #ffebcc;
+    border-left: 5px solid #ff9900;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.readme-link {
+    display: inline-block;
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.readme-link:hover {
+    background-color: #d63b00;
+    transform: scale(1.05);
+}
+
+
+  </style>
+</head>
+<body>
+
+<h1>Offline Registration Portal 2.0</h1>
+<h2>Admin page</h2>
+
+<div class="readme-box">
+  <p>🚨 Hey you! Are you new here? Don't mess things up—<strong>Read me first!</strong> 🤓</p>
+  <a href="readme.html" class="readme-link">📖 Read Me First!</a>
+</div>
+
+
+<!-- Form for General Configuration -->
+<form id="generalConfigForm">
+  <h2>General Configuration</h2>
+  <label for="title">Title:</label>
+  <input type="text" id="title" placeholder="Enter Title" required>
+  
+  <label for="subtitle">Subtitle:</label>
+  <input type="text" id="subtitle" placeholder="Enter Subtitle" required>
+  
+  <button type="submit">Save General Configuration</button>
+</form>
+
+<!-- Form for Tech Event Configuration -->
+<form id="techConfigForm" class="event-config">
+  <h2>Tech Event Configuration</h2>
+  <h4 style="color: red;">you can't delete 1st item ("no item selected" with 0 participants!!)</h4>
+  <div id="techItems">
+    <!-- Dynamically populated tech items -->
+  </div>
+  <button type="button" onclick="addTechItem()">Add Tech Item</button>
+  <button type="submit">Save Tech Configuration</button>
+</form>
+
+<!-- Form for Management Event Configuration -->
+<form id="managementConfigForm" class="event-config">
+  <h2>Management Event Configuration</h2>
+  <h4 style="color: red;">you can't delete 1st item ("no item selected" with 0 participants!!)</h4>
+  <div id="managementItems">
+    <!-- Dynamically populated management items -->
+  </div>
+  <button type="button" onclick="addManagementItem()">Add Management Item</button>
+  <button type="submit">Save Management Configuration</button>
+</form>
+
+<!-- Form for Common Event Configuration -->
+<form id="commonConfigForm" class="event-config">
+  <h2>Common Event Configuration</h2>
+  <h4 style="color: red;">you can't delete 1st item ("no item selected" with 0 participants!!)</h4>
+  <div id="commonItems">
+    <!-- Dynamically populated common items -->
+  </div>
+  <button type="button" onclick="addCommonItem()">Add Common Item</button>
+  <button type="submit">Save Common Configuration</button>
+</form>
+<form class="event-config">
+  <div class="form-group">
+    <label for="startingPointInput">Enter Starting 3-Digit Number:</label>
+    <!-- The placeholder will be updated on load -->
+    <input type="number" id="startingPointInput" placeholder="Enter starting number" min="1" max="999" required>
+    <button class="sp-button" onclick="saveConfig()">Save Starting Point</button>
+
+  </div>
+</form>
+<!-- Starting Point Input -->
+
+<!-- Final Submit Button -->
+<button onclick="finalSubmit()" class="finall-button" >
+  Final Submit and Load Registration Portal
+</button>
+<!-- Reset Everything Button -->
+<button class="reset-button" onclick="resetAll()">Reset All Data</button>
+
+
+<script>
+  // Load saved configurations from localStorage
+  let config = JSON.parse(localStorage.getItem('config')) || {
+    title: "Euphoria 2K25",
+    subtitle: "Tech and Management Fest",
+    techItems: [
+    { name: "No Item selected", teamSize: 0 }
+    ],
+    managementItems: [
+    { name: "No Item selected", teamSize: 0 }
+    ],
+    commonItems: [
+    { name: "No Item selected", teamSize: 0 }
+    ]
+  };
+
+  // Populate forms with saved configurations
+  document.getElementById('title').value = config.title;
+  document.getElementById('subtitle').value = config.subtitle;
+
+// Helper function to get ordinal string (e.g., 1st, 2nd, 3rd, etc.)
+function getOrdinall(n) {
+  let s = ["th", "st", "nd", "rd"],
+      v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
+// Render configuration items for each event type with ordinal labels
+function renderItems(containerId, items) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  items.forEach((item, index) => {
+    const ordinal = getOrdinall(index + 1); // Calculate ordinal for current index (starting from 1)
+    container.innerHTML += `
+      <div>
+        <label>${ordinal} Item Name:</label>
+        <input type="text" value="${item.name}" ${index === 0 ? 'readonly' : `onchange="updateItem('${containerId}', ${index}, 'name', this.value)"`} required>
+        <label>Participant Count:</label>
+        <input type="number" value="${item.teamSize}" ${index === 0 ? 'readonly' : `onchange="updateItem('${containerId}', ${index}, 'teamSize', this.value)"`} required>
+        ${index === 0 ? '' : `<button type="button" onclick="deleteItem('${containerId}', ${index})">Delete</button>`}
+      </div>
+    `;
+  });
+}
+
+
+
+  function updateItem(containerId, index, property, value) {
+    if (containerId === 'techItems') {
+      config.techItems[index][property] = value;
+    } else if (containerId === 'managementItems') {
+      config.managementItems[index][property] = value;
+    } else if (containerId === 'commonItems') {
+      config.commonItems[index][property] = value;
+    }
+    localStorage.setItem('config', JSON.stringify(config));
+  }
+
+  function deleteItem(containerId, index) {
+      // Prevent deletion of the first item (index 0)
+      if (index === 0) return;
+      if (containerId === 'techItems') {
+        config.techItems.splice(index, 1);
+        renderItems('techItems', config.techItems);
+      } else if (containerId === 'managementItems') {
+        config.managementItems.splice(index, 1);
+        renderItems('managementItems', config.managementItems);
+      } else if (containerId === 'commonItems') {
+        config.commonItems.splice(index, 1);
+        renderItems('commonItems', config.commonItems);
+      }
+      localStorage.setItem('config', JSON.stringify(config));
+    }
+
+  function addTechItem() {
+    config.techItems.push({ name: "New Item", teamSize: 1 });
+    localStorage.setItem('config', JSON.stringify(config));
+    renderItems('techItems', config.techItems);
+  }
+
+  function addManagementItem() {
+    config.managementItems.push({ name: "New Item", teamSize: 1 });
+    localStorage.setItem('config', JSON.stringify(config));
+    renderItems('managementItems', config.managementItems);
+  }
+
+  function addCommonItem() {
+    config.commonItems.push({ name: "New Item", teamSize: 1 });
+    localStorage.setItem('config', JSON.stringify(config));
+    renderItems('commonItems', config.commonItems);
+  }
+
+  // Save general configuration
+  document.getElementById('generalConfigForm').onsubmit = function (e) {
+    e.preventDefault();
+    config.title = document.getElementById('title').value;
+    config.subtitle = document.getElementById('subtitle').value;
+    localStorage.setItem('config', JSON.stringify(config));
+    alert("General configuration saved!");
+  };
+
+  // Save tech configuration
+  document.getElementById('techConfigForm').onsubmit = function (e) {
+    e.preventDefault();
+    localStorage.setItem('config', JSON.stringify(config));
+    alert("Tech configuration saved!");
+  };
+
+  // Save management configuration
+  document.getElementById('managementConfigForm').onsubmit = function (e) {
+    e.preventDefault();
+    localStorage.setItem('config', JSON.stringify(config));
+    alert("Management configuration saved!");
+  };
+
+  // Save common configuration
+  document.getElementById('commonConfigForm').onsubmit = function (e) {
+    e.preventDefault();
+    localStorage.setItem('config', JSON.stringify(config));
+    alert("Common configuration saved!");
+  };
+
+  function saveConfig() {
+  let startingPointInputValue = document.getElementById("startingPointInput").value;
+  if (startingPointInputValue && !isNaN(startingPointInputValue)) {
+    let sp = parseInt(startingPointInputValue, 10);
+    if (sp >= 1 && sp <= 999) {
+      localStorage.setItem('startingPoint', sp);
+      // Update the placeholder using our separate function
+      updateStartingPointPlaceholder();
+      // Clear the input value so that the updated placeholder is visible
+      document.getElementById("startingPointInput").value = "";
+      alert("Starting point saved successfully!");
+    } else {
+      alert("Please enter a valid number between 1 and 999.");
+    }
+  } else {
+    alert("Invalid input! Please enter a valid starting number.");
+  }
+}
+// Function to update the starting point placeholder
+function updateStartingPointPlaceholder() {
+  const sp = localStorage.getItem('startingPoint');
+  const spInput = document.getElementById("startingPointInput");
+  if (sp) {
+    spInput.placeholder = `Current Starting Point: ${sp}`;
+  } else {
+    spInput.placeholder = "Enter starting number";
+  }
+}
+// Call updateStartingPointPlaceholder on page load to set the current value
+window.onload = function () {
+  updateStartingPointPlaceholder();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  // Other onload logic...
+};
+
+  // Final submit and load registration portal
+  function finalSubmit() {
+    localStorage.setItem('config', JSON.stringify(config));
+    window.location.href = 'index.html'; // Redirect to the registration page
+  }
+
+  // Initial render of items
+  renderItems('techItems', config.techItems);
+  renderItems('managementItems', config.managementItems);
+  renderItems('commonItems', config.commonItems);
+
+  function resetAll() {
+    if (confirm("Are you sure? This will delete all stored data.")) {
+        localStorage.clear();
+        location.reload();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+}
+
+  
+
+</script>
+
+</body>
+</html>

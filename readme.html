@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline Registration Portal 2.0 Documentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #007BFF;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 2em;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    h3 {
+      font-size: 1.5em;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    ul, ol {
+      margin-bottom: 15px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .feature-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .feature-list li {
+      background: #e9f5ff;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .note {
+      background: #fff3cd;
+      padding: 15px;
+      border-left: 5px solid #ffc107;
+      margin-bottom: 20px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #666;
+    }
+    .back-button {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-button a {
+            text-decoration: none;
+            background: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .back-button a:hover {
+            background: #218838;
+        }
+  </style>
+</head>
+<body>
+
+  <h1>Offline Registration Portal 2.0</h1>
+  <p><strong>Created by Hari R Chandran (MCA Batch 2024-26, MIIT,Ayur) with the Help of ChatGPT</strong></p>
+
+  <p>Welcome to <strong>Offline Registration Portal 2.0</strong> – your one-stop solution for event registrations without the hassle of online connectivity! Whether you're an administrator configuring the event or a user registering for an event, this guide will help you navigate through the system like a pro. Let’s get started! 🚀</p>
+
+  <h2>📌 Features of Offline Registration Portal 2.0</h2>
+  <ul class="feature-list">
+    <li>✅ <strong>Fully Offline Functionality</strong> – No internet? No problem! All data is stored in your browser’s local storage.</li>
+    <li>✅ <strong>Admin Panel for Customization</strong> – Set up event names, categories, and team sizes effortlessly.</li>
+    <li>✅ <strong>Dynamic Registration System</strong> – Supports individual and team-based registrations.</li>
+    <li>✅ <strong>Auto-Saving</strong> – Your data is never lost, even if you refresh or close the browser.</li>
+    <li>✅ <strong>Export & Print Options</strong> – Download the registration data as an Excel file or print them directly.</li>
+    <li>✅ <strong>Live Counter</strong> – See the number of registrations for each event in real time.</li>
+    <li>✅ <strong>Starting Point Configuration</strong> – Set a unique registration ID starting number.</li>
+    <li>✅ <strong>Reset Feature</strong> – Need a fresh start? Reset everything with one click!</li>
+    <li>✅ <strong>Timestamp for Registrations</strong> – Each registration includes a timestamp in <code>mm dd yyyy</code> along with time.</li>
+  </ul>
+
+  <h2>🛠️ Admin Panel: How to Use</h2>
+  <p>(This is where the magic begins! ✨)</p>
+  <p>The <strong>Admin Panel</strong> allows you to configure the event settings before the main registration starts. Here’s how to use it:</p>
+
+  <h3>1️⃣ General Settings</h3>
+  <ul>
+    <li>Enter the <strong>title</strong> and <strong>subtitle</strong> for your event.</li>
+    <li>These will appear on the main registration page.</li>
+  </ul>
+
+  <h3>2️⃣ Event Configuration</h3>
+  <p>You can configure <strong>three event types</strong>:</p>
+  <ul>
+    <li>🛠 <strong>Tech Events</strong> – Coding competitions, bug bounty, etc.</li>
+    <li>📊 <strong>Management Events</strong> – Business simulations, case studies, etc.</li>
+    <li>🌍 <strong>Common Events</strong> – Open to all participants (e.g., quizzes, general competitions).</li>
+  </ul>
+
+  <h4>Adding Events</h4>
+  <ul>
+    <li>Each category has at least one default event (which cannot be deleted).</li>
+    <li>You can add more events and specify the <strong>team size</strong> for each.</li>
+    <li>The event names are dynamically numbered (e.g., 1st Item Name, 2nd Item Name, etc.).</li>
+    <li>To delete an event, click <strong>"Delete"</strong> (but the first event is non-deletable).</li>
+  </ul>
+
+  <h3>3️⃣ Setting the Starting Number</h3>
+  <ul>
+    <li>Enter a <strong>three-digit starting number</strong> (e.g., 101, 201, etc.).</li>
+    <li>This will be used for auto-generating unique IDs for registrations.</li>
+    <li>The placeholder will always show the current saved starting number.</li>
+  </ul>
+
+  <h3>4️⃣ Finalizing the Setup</h3>
+  <ul>
+    <li>Click <strong>"Final Submit and Load Registration Portal"</strong>, and you’re done! 🎉</li>
+  </ul>
+
+  <h3>5️⃣ Reset Everything (The Nuclear Button ☢️)</h3>
+  <ul>
+    <li>A big red button at the bottom allows you to reset everything (configurations & registrations).</li>
+    <li>Use this only if you want a fresh start – it clears local storage and refreshes the page.</li>
+  </ul>
+
+  <h2>📝 Main Registration Portal: How to Use</h2>
+  <p>(This is where people sign up for events! 📝)</p>
+
+  <h3>1️⃣ Choose an Event Type</h3>
+  <ul>
+    <li>Select <strong>Tech</strong>, <strong>Management</strong>, or <strong>Common</strong>.</li>
+  </ul>
+
+  <h3>2️⃣ Choose an Event Item</h3>
+  <ul>
+    <li>Based on the event type, select an event.</li>
+  </ul>
+
+  <h3>3️⃣ Enter Participant Details</h3>
+  <ul>
+    <li><strong>Team members' names</strong> (auto-filled based on team size).</li>
+    <li><strong>College name</strong>.</li>
+    <li><strong>Phone number</strong>.</li>
+    <li><strong>Email ID</strong>.</li>
+    <li><strong>Payment details</strong>.</li>
+  </ul>
+
+  <h3>4️⃣ Mode of Registration</h3>
+  <ul>
+    <li>Select either <strong>"Spot"</strong> (default) or <strong>"Online"</strong>.</li>
+  </ul>
+
+  <h3>5️⃣ Submit the Form</h3>
+  <ul>
+    <li>Your registration will be saved!</li>
+  </ul>
+
+  <h2>Extra Cool Features 🎉</h2>
+  <ul>
+    <li><strong>Auto-fill options</strong> for college name & phone number.</li>
+    <li><strong>Live Registration Counter</strong> – View the count of registered participants per event.</li>
+    <li><strong>Scroll Buttons</strong> – Quickly navigate up & down the page.</li>
+    <li><strong>Timestamp for Registrations</strong> – Each registration includes a timestamp in <code>mm dd yyyy</code> format, along with the time of registration.</li>
+  </ul>
+
+  <h2>📤 Export & Print Options</h2>
+  <h3>🔹 Export to Excel</h3>
+  <ul>
+    <li>Download all registration data as an Excel file.</li>
+    <li>The Excel file includes all details, such as event name, participant names, phone numbers, college, email, payment, and timestamp.</li>
+  </ul>
+
+  <h3>🔹 Print by Event Type</h3>
+  <ul>
+    <li>Print data filtered by event type.</li>
+    <li>The printed output includes a formatted table with event details, participant names, phone numbers, and timestamps.</li>
+  </ul>
+
+  <h3>🔹 Smart Formatting</h3>
+  <ul>
+    <li>Long participant names wrap inside the table automatically (no cut-off text!).</li>
+  </ul>
+
+  <h2>🔄 Data Management</h2>
+  <ul>
+    <li>Data is auto-saved in your browser’s local storage.</li>
+    <li><strong>Deleting an entry</strong> updates the starting point automatically, allowing the next registration to reuse the deleted entry's ID.</li>
+    <li><strong>Reset button</strong> clears everything (use wisely!).</li>
+  </ul>
+
+  <h2>🎯 Final Thoughts</h2>
+  <p>This portal is designed to make event registration <strong>fast, easy, and reliable</strong> – even without the internet! 💡 Whether you're managing the event or participating in it, <strong>Offline Registration Portal 2.0</strong> has got you covered.</p>
+
+  <p>🚀 <strong>Now go ahead, set up your event, and start registering participants hassle-free!</strong> 🚀</p>
+
+  <div class="note">
+    <h3>Additional Notes for Administrators</h3>
+    <ul>
+      <li><strong>Timestamp Format</strong>: The timestamp is displayed in <code>mm dd yyyy</code> format (e.g., <code>10 25 2024</code>), don't get confused.</li>
+      <li><strong>ID Reuse</strong>: When an entry is deleted, the system automatically reuses the deleted entry's ID for the next registration.</li>
+      <li><strong>Backup Data</strong>: Always export the data to Excel before resetting the system or clearing local storage.</li>
+    </ul>
+  </div>
+  <div class="back-button">
+    <a href="config.html">Go Back to Registration Portal</a>
+</div>
+
+  <div class="footer">
+    <p>Thank you for using Offline Registration Portal 2.0! If you have any questions or need further assistance, feel free to reach out. 😊</p>
+  </div>
+
+</body>
+</html>

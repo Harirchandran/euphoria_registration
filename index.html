@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Euphoria 2k25 Registration</title>
+  <link>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+<style>
+  /* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e8e5e5;
+  color: #333;
+}
+
+/* Headings */
+h1, h2, h3 {
+  text-align: center;
+  margin: 10px 0;
+  color: #007BFF;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #555;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+/* Form Styling */
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+form input, form select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+form button[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+form button[type="reset"] {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+
+
+/* Scroll Buttons */
+.scroll-button {
+  position: fixed;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#scrollToBottom {
+  bottom: 20px;
+  right: 20px;
+}
+
+#scrollToTop {
+  bottom: 70px;
+  right: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #4CAF50;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.insta-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.insta-link img {
+  width: 24px;
+  height: 24px;
+}
+
+.insta-link a {
+  color: #E1306C;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.insta-link a:hover {
+  color: #FF4081;
+}
+/* General Footer Button Styling */
+footer button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer button:hover {
+  transform: scale(1.05);
+}
+
+footer button:active {
+  transform: scale(1);
+}
+
+/* Specific Styling for Reset Button */
+footer .reset-button {
+  background-color: #ff0000; /* Bootstrap red */
+}
+
+footer .reset-button:hover {
+  background-color: #f17481; /* Darker red on hover */
+}
+
+footer .reset-button:active {
+  background-color: #851a24; /* Even darker red when clicked */
+}
+
+/* Disabled Button Styling */
+footer button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Responsive Footer Buttons */
+@media (max-width: 768px) {
+  footer button {
+    width: calc(100% - 20px); /* Full-width button */
+    margin: 10px auto;       /* Center margin */
+    font-size: 13px;         /* Adjust text size */
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  form {
+    padding: 15px;
+  }
+
+  form button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  form {
+    padding: 10px;
+  }
+
+  input, select {
+    font-size: 12px;
+  }
+
+  button {
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+
+
+  footer {
+    font-size: 12px;
+  }
+
+  .insta-link img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .insta-link a {
+    font-size: 12px;
+  }
+}
+/* General Styles for Buttons */
+.scroll-button {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right edge */
+  background-color: #28a745; /* Green color */
+  color: white;
+  border: none;
+  border-radius: 5px; /* Slightly rounded corners */
+  padding: 10px 20px; /* Padding for better button shape */
+  font-size: 16px; /* Text size */
+  display: none; /* Initially hidden */
+  z-index: 1000; /* Ensure buttons are on top */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Buttons */
+.scroll-button:hover {
+  background-color: #218838; /* Darker shade for hover (green) */
+}
+
+/* For large screens (laptops and desktops) */
+@media (min-width: 768px) {
+  .scroll-button {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: auto; /* Remove fixed width for auto sizing */
+  }
+
+
+}
+
+/* For mobile screens (less than 768px) */
+@media (max-width: 768px) {
+  .scroll-button {
+    bottom: 10px; /* Slightly closer to the bottom for better touch access */
+    right: 10px; /* Adjust position for mobile */
+    padding: 8px 16px; /* Slightly smaller padding for mobile */
+    font-size: 14px; /* Smaller font size for mobile */
+    display: block; /* Ensure buttons are always visible */
+  }
+
+  .scroll-button.up,
+  .scroll-button.down {
+    width: 100px; /* Fixed width for both buttons */
+  }
+}
+/* General Styles for Buttons */
+.scroll-button {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right edge */
+  background-color: #28a745; /* Default green color for both buttons */
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50px; /* Slightly rounded corners */
+  padding: 10px 20px; /* Padding for better button shape */
+  font-size: 16px; /* Text size */
+  display: none; /* Initially hidden */
+  z-index: 1000; /* Ensure buttons are on top */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Buttons */
+.scroll-button:hover {
+  background-color: #218838; /* Darker shade for hover (green) */
+}
+
+/* Styling specifically for the "Up" button */
+.scroll-button.up {
+  background-color: #07f7ff; /* Blue color for "Up" button */
+  right: 20px; /* Position to the right of the screen */
+  bottom: 20px; /* Distance from the bottom */
+}
+
+/* Styling specifically for the "Down" button */
+.scroll-button.down {
+  background-color: #07f7ff; /* Yellow color for "Down" button */
+  right: 20px; /* Position to the right of the screen */
+  bottom: 80px; /* Slightly above the "Up" button */
+}
+
+/* For large screens (laptops and desktops) */
+@media (min-width: 768px) {
+  .scroll-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: auto; /* Remove fixed width for auto sizing */
+  }
+
+  .scroll-button.up {
+    background-color:#07f7ff; /* Blue for "Up" */
+  }
+
+  .scroll-button.down {
+    background-color: #07f7ff; /* Yellow for "Down" */
+  }
+}
+
+/* For mobile screens (less than 768px) */
+@media (max-width: 768px) {
+  .scroll-button {
+    bottom: 10px; /* Slightly closer to the bottom for better touch access */
+    right: 10px; /* Adjust position for mobile */
+    padding: 8px 16px; /* Slightly smaller padding for mobile */
+    font-size: 14px; /* Smaller font size for mobile */
+    display: block; /* Ensure buttons are always visible */
+  }
+
+  .scroll-button.up {
+    bottom: 10px; /* Bottom position for "Up" button */
+    background-color:#07f7ff; /* Blue for "Up" */
+  }
+
+  .scroll-button.down {
+    bottom: 60px; /* Position it slightly above "Up" button */
+    background-color:#07f7ff; /* Yellow for "Down" */
+  }
+}
+/* Table Styling */
+table {
+  width: 100%; /* Ensure the table takes up the full width of its container */
+  max-width: 100%; /* Prevents the table from overflowing beyond the container */
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Ensures columns remain proportionally sized */
+  word-wrap: break-word; /* Ensures long text wraps within cells */
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+table th {
+  background-color: #007BFF;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Prevent table from causing horizontal scrolling on mobile */
+@media (max-width: 768px) {
+  table {
+    width: 100%; /* Ensure full width but prevents overflow */
+    overflow-x: auto;
+    display: block; /* Allow horizontal scrolling if necessary */
+  }
+
+  table th, table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+/* Counter Box Styling */
+#counterBox {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  z-index: 1000;
+}
+
+#counterBox h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: #007BFF;
+  text-align: center;
+}
+
+#counterList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#counterList li {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Responsive Design for Counter Box */
+@media (max-width: 768px) {
+  #counterBox {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<h1 id="pageTitle">Euphoria 2K25</h1>
+<h2 id="pageSubtitle">Tech and Management Fest</h2>
+<h2>Marthoma Institute of Information Technology</h2>
+<h3>Offline Registration Portal 2.0</h3>
+
+
+<!-- Registration Form -->
+<form id="registrationForm" onsubmit="handleSubmit(event)">
+  <label for="eventType">Choose Event:</label>
+  <select id="eventType" required onchange="displayItems()">
+    <option value="">Select Event</option>
+    <option value="management">Management</option>
+    <option value="tech">Tech</option>
+    <option value="common">Common</option>
+  </select>
+
+  <div id="eventItems" style="display:none;">
+    <label for="eventItem">Select Item:</label>
+    <select id="eventItem" required onchange="updateTeamInput()">
+      <!-- Dynamically populated based on selected event -->
+    </select>
+  </div>
+
+  <div id="teamMembers" style="display:none;">
+    <h3>Team Members Details:</h3>
+    <label for="teamMember1">Team Member 1:</label>
+    <input type="text" id="teamMember1" placeholder="Team Member 1 Name" required oninput="validateUppercase(this)" >
+    
+    <div id="additionalTeamMembers">
+      <!-- Additional team members will be populated here -->
+    </div>
+  </div>
+  <label for="college1">College Name:</label>
+  <input type="text" id="college1" placeholder="College Name" required oninput="validateUppercase(this)">
+  
+  <label for="phoneNumber">Phone Number:</label>
+  <input type="text" id="phoneNumber" placeholder="Phone Number" required oninput="validatePhone(this)">
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" placeholder="Email ID" required>
+
+  <label for="payment">Payment:</label>
+  <input type="text" id="payment" placeholder="Payment Amount" required oninput="validateNumber(this)">
+
+  <label for="registrationMode">Mode of Registration:</label>
+  
+  <input type="radio" id="spot" name="registrationMode" value="Spot" checked>
+  <label for="spot">Spot</label>
+
+  <input type="radio" id="online" name="registrationMode" value="Online">
+  <label for="online">Online</label>
+
+  <button type="submit">Register</button>
+  <button type="button" onclick="clearForm()">Clear Form</button>
+</form>
+
+
+<div id="counterBox">
+  <h3>LIVE Registration Count </h3>
+  <ul id="counterList">
+    <!-- Dynamically populated by JavaScript -->
+  </ul>
+</div>
+
+<!-- Scroll Buttons with Text for "Up" and "Down" -->
+<button id="scrollToBottom" class="scroll-button down">Down</button> <!-- "Down" button -->
+<button id="scrollToTop" class="scroll-button up">Up</button> <!-- "Up" button -->
+
+
+
+
+<table id="dataTable" style="display:table;">
+  <thead>
+    <tr>
+      <th>Date and time</th> 
+      <th>ID</th>
+      <th>Event Name</th>
+      <th>Item Name</th>
+      <th>Participants</th>
+      <th>Phone Number</th>
+      <th>College</th>
+      <th>Email</th>
+      <th>Payment</th>
+      <th>Mode of Reg</th> 
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+
+
+<!-- Footer -->
+<footer>
+  
+  <div class="footer-buttons">
+  <button id="deleteButton" onclick="deleteLastEntry()">Delete Last Entry( page will reload to take effect) </button>
+<button id="exportButton" onclick="exportToExcel()">Export Data to Excel</button>
+
+<button id="printButton" onclick="printEntries()">Print Data by Type<br>**please enable pop up for this site</button>
+
+<button class="reset-button"  id="resetButton">Reset All Data</button>
+
+<div class="footer-content">
+  
+    <p>Website developed by Hari R Chandran using ChatGPT, student of MCA batch 2024-2026, MIIT, Ayoor.</p>
+    
+    <div class="insta-link">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+      <a href="https://www.instagram.com/hari_r_c?igsh=MTNsazJzdXJodW5uZQ==" target="_blank">Connect on Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+
+// Automatically convert to uppercase for Name and College
+function validateUppercase(input) {
+    input.value = input.value.toUpperCase(); // Convert input text to uppercase
+}
+
+
+// Validate Phone Number (only 10 digits)
+function validatePhone(input) {
+    input.value = input.value.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+    if (input.value.length > 10) {
+        input.value = input.value.slice(0, 10); // Limit to 10 digits
+    }
+}
+
+// Validate Payment (only numbers)
+function validateNumber(input) {
+    input.value = input.value.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+}
+    // Load configuration from localStorage
+    const config = JSON.parse(localStorage.getItem('config')) || {
+    title: "Euphoria 2K25",
+    subtitle: "Tech and Management Fest",
+    techItems: [
+      { name: "DecodeX", teamSize: 1 },
+      { name: "Bug Bounty", teamSize: 1 },
+      { name: "Ideate Airena", teamSize: 2 },
+      { name: "All Items", teamSize: 2 }
+    ],
+    managementItems: [
+      { name: "Excelsior Elite", teamSize: 4 },
+      { name: "Brand Blite", teamSize: 4 },
+      { name: "Eureka", teamSize: 2 }
+    ],
+    commonItems: [
+      { name: "IPL Auction", teamSize: 4 },
+      { name: "Mystery Mavens", teamSize: 4 }
+    ]
+  };
+
+  // Update the page title and subtitle
+  document.getElementById('pageTitle').textContent = config.title;
+  document.getElementById('pageSubtitle').textContent = config.subtitle;
+
+  // Define the event items globally
+  let managementItems = config.managementItems;
+  let techItems = config.techItems;
+  let commonItems = config.commonItems;
+
+  // Function to display items based on the selected event
+  function displayItems() {
+    const eventType = document.getElementById('eventType').value;
+    const eventItemDropdown = document.getElementById('eventItem');
+    const eventItemsDiv = document.getElementById('eventItems');
+
+    eventItemDropdown.innerHTML = '';
+    eventItemsDiv.style.display = 'none';
+
+    let items;
+    if (eventType === 'management') items = managementItems;
+    else if (eventType === 'tech') items = techItems;
+    else if (eventType === 'common') items = commonItems;
+
+    if (items) {
+        eventItemsDiv.style.display = 'block';
+        items.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item.name;
+            option.textContent = item.name;
+            eventItemDropdown.appendChild(option);
+        });
+    }
+  }
+  // Function to update the counter box
+function updateCounterBox() {
+  const counterList = document.getElementById('counterList');
+
+  counterList.innerHTML = ''; // Clear the list
+
+
+  // Create a map to count registrations per item
+  const itemCounts = {};
+
+  registrations.forEach(reg => {
+    if (!itemCounts[reg.itemName]) {
+      itemCounts[reg.itemName] = 0;
+    }
+    itemCounts[reg.itemName]++;
+  });
+
+  // Populate the counter box
+  for (const [itemName, count] of Object.entries(itemCounts)) {
+    const li = document.createElement('li');
+    li.textContent = `${itemName}: ${count}`;
+    counterList.appendChild(li);
+  }
+}
+// Scroll to Top Button
+const scrollToTopButton = document.getElementById('scrollToTop');
+const scrollToBottomButton = document.getElementById('scrollToBottom');
+
+// Function to check if buttons should be shown or hidden
+function toggleScrollButtons() {
+  const scrollPosition = window.scrollY;
+  const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+  // Show the 'scroll to top' button if scrolled down
+  if (scrollPosition > 0) {
+    scrollToTopButton.style.display = 'block';
+  } else {
+    scrollToTopButton.style.display = 'none';
+  }
+
+  // Show the 'scroll to bottom' button if not at the bottom
+  if (scrollPosition < pageHeight) {
+    scrollToBottomButton.style.display = 'block';
+  } else {
+    scrollToBottomButton.style.display = 'none';
+  }
+}
+
+// Event listeners for scroll buttons
+scrollToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+scrollToBottomButton.addEventListener('click', () => {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+});
+
+// Listen to scroll events to toggle the buttons
+window.addEventListener('scroll', toggleScrollButtons);
+
+// Initial check on page load
+toggleScrollButtons();
+
+
+
+
+
+  
+  let registrations = JSON.parse(localStorage.getItem('registrations')) || [];
+  let startingPoint = parseInt(localStorage.getItem('startingPoint')) || 1;
+
+  function saveToLocalStorage() {
+    localStorage.setItem('registrations', JSON.stringify(registrations));
+    localStorage.setItem('startingPoint', startingPoint);
+  }
+  
+
+
+
+
+
+  function reloadPage() {
+  location.reload(); // Reloads the current page
+}
+
+
+function deleteLastEntry() {
+  if (confirm("Are you sure you want to delete the last entry?")) {
+    if (registrations.length > 0) {
+      // Get the last entry's ID
+      const lastEntryId = registrations[registrations.length - 1].id;
+      // Extract the numeric part of the ID (e.g., "TEC-001-102" -> 102)
+      const lastEntryNumber = parseInt(lastEntryId.split('-').pop(), 10);
+
+      // Adjust the startingPoint to reuse the deleted entry's ID
+      startingPoint = lastEntryNumber;
+
+      // Remove the last entry from the registrations array
+      registrations.pop();
+
+      // Save the updated registrations and startingPoint to localStorage
+      saveToLocalStorage();
+
+      // Update the table and counter box
+      updateTable();
+      updateCounterBox();
+
+      // Reload the page to reflect changes
+      reloadPage();
+      alert("Last entry deleted successfully!");
+    } else {
+      alert("No entries to delete!");
+    }
+  }
+}
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const eventType = document.getElementById('eventType').value;
+  const eventItem = document.getElementById('eventItem').value;
+  const participants = [];
+  const phoneNumber = document.getElementById('phoneNumber').value;
+  const college = document.getElementById('college1').value;
+  const payment = document.getElementById('payment').value;
+  const email = document.getElementById('email').value;
+  const registrationMode = document.querySelector('input[name="registrationMode"]:checked').value;
+    
+  const teamSize = document.querySelectorAll('#additionalTeamMembers input').length ;
+  for (let i = 1; i <= teamSize + 1; i++) {
+    participants.push(document.getElementById(`teamMember${i}`).value);
+   
+  }
+
+  // Generate the new ID using the current startingPoint
+  const entryID = `${eventType.charAt(0).toUpperCase()}-${eventItem.slice(0, 3).toUpperCase()}-${startingPoint++}`;
+
+  // Get the current date and time
+  const timestamp = new Date().toLocaleString(); // Format: "MM/DD/YYYY, HH:MM:SS AM/PM"
+  const registration = {
+    timestamp, // Add timestamp to the registration object
+    id: entryID,
+    eventName: eventType,
+    itemName: eventItem,
+    participants: participants.map(name => name).join(', '),
+    phoneNumber: phoneNumber,
+    college,
+    email,
+    payment,
+    mode: registrationMode  // Store registration mode
+  };
+
+  registrations.push(registration);
+  saveToLocalStorage();
+  updateTable();
+  updateCounterBox();
+  clearForm();
+  alert("Registration successful!");
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+
+
+function exportToExcel() {
+  if(
+    confirm("The full data will be downloaded as excel format. Do you wish to proceed?")
+  ){
+ 
+      const worksheet = XLSX.utils.json_to_sheet(registrations);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Registrations");
+      XLSX.writeFile(workbook, "Registrations.xlsx");
+    }
+  }
+
+// Helper function to get ordinal suffix for a digit
+function getOrdinalSuffix(digit) {
+  // Handle the most common single-digit cases.
+  if (digit === 1) return "st";
+  else if (digit === 2) return "nd";
+  else if (digit === 3) return "rd";
+  else return "th";
+}
+
+
+  function printEntries() {
+  const type = prompt("Enter type of event to print (tech/management/common/all):").toLowerCase();
+  let filteredRegistrations = registrations;
+
+  if (type !== 'all') {
+    filteredRegistrations = registrations.filter(reg => reg.eventName === type);
+  }
+
+  if (filteredRegistrations.length === 0) {
+    alert("No data available for the selected type!");
+    return;
+  }
+
+   // Get the starting point from localStorage (or fallback to our variable)
+   let spValue = localStorage.getItem("startingPoint") || startingPoint;
+  spValue = parseInt(spValue, 10);
+  let spStr = spValue.toString();
+  let firstDigit = parseInt(spStr.charAt(0), 10);
+  let ordinal = getOrdinalSuffix(firstDigit);
+  const headingWithSP = `Registrations from ${firstDigit}${ordinal} counter`;
+
+  const eventTypeHeading =
+    type === "all"
+      ? "All Events"
+      : `${type.charAt(0).toUpperCase() + type.slice(1)} Event`;
+
+  // Group registrations by the middle part of the id
+  const groupedRegistrations = filteredRegistrations.reduce((acc, reg) => {
+    const middlePart = reg.id.split("-")[1]; // Extract the part between the hyphens
+    acc[middlePart] = acc[middlePart] || [];
+    acc[middlePart].push(reg);
+    return acc;
+  }, {});
+
+  let printContent = `
+<style>
+         table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto; /* Prevents expanding */
+        width: 100%;
+        height: auto;
+
+     
+    
+    word-wrap: break-word;
+      }
+      th, td {
+        padding: 8px;
+        border: 1px solid black;
+        word-break: break-word; /* Breaks long words */
+        white-space: pre-wrap; /* Wraps text into multiple lines */
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      h3, h4, h5, h6 {
+        text-align: center;
+        margin: 5px 0;
+      }
+td:nth-child(4) { /* Targeting the participants column */
+  width: 200px;
+  height: auto; /* Fixed width for participants column */
+  white-space: normal; /* Allow the text to wrap normally */
+  word-wrap: break-word; /* Allow long words to break and wrap */
+  word-break: break-word; /* Ensure long words do not overflow */
+}
+
+
+
+    </style>
+   
+
+   <h3>${headingWithSP}</h3>
+   
+    <h5>Offline Registration Portal 2.0</h5>
+    <h6 style="margin-top: 10px; color: gray;">Event Type: ${eventTypeHeading}</h6>
+  `;
+
+  Object.keys(groupedRegistrations).forEach(groupKey => {
+    printContent += `
+      <h5 style="text-align: left; margin-top: 20px; color: black;">Item: ${groupKey.toUpperCase()}</h5>
+      <table>
+        <thead>
+          <tr>
+            <th>No:</th>
+            <th>ID</th>
+            <th>Item</th>
+            <th>Participants</th>
+            <th>Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    groupedRegistrations[groupKey].forEach((entry, index) => {
+      printContent += `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${entry.id}</td>
+          <td>${entry.itemName}</td>
+          <td style="white-space: pre-line;">${entry.participants.replace(/,/g, '\n')}</td>
+          <td><pre>${entry.phoneNumber}</pre></td>
+        </tr>
+      `;
+    });
+
+    printContent += `
+        </tbody>
+      </table>
+    `;
+  });
+
+  const newWindow = window.open();
+  newWindow.document.write(printContent);
+  newWindow.document.close();
+  newWindow.print();
+}
+
+
+  
+
+  function updateTeamInput() {
+    const eventType = document.getElementById('eventType').value;
+    const eventItem = document.getElementById('eventItem').value;
+    const teamMembersDiv = document.getElementById('teamMembers');
+    const additionalTeamMembersDiv = document.getElementById('additionalTeamMembers');
+    additionalTeamMembersDiv.innerHTML = '';
+
+    let teamSize = 1;
+    const items = eventType === 'management' ? managementItems : eventType === 'tech' ? techItems : commonItems;
+    const selectedItem = items.find(item => item.name === eventItem);
+    teamSize = selectedItem ? selectedItem.teamSize : 1;
+
+    teamMembersDiv.style.display = 'block';
+
+    for (let i = 2; i <= teamSize; i++) {
+      additionalTeamMembersDiv.innerHTML += `
+        <label>Team Member ${i}:</label>
+        <input type="text" id="teamMember${i}" placeholder="Team Member ${i} Name" required  oninput="validateUppercase(this)">
+        
+      `;
+    }
+  }
+
+
+
+
+  function clearForm() {
+    document.getElementById('registrationForm').reset();
+    document.getElementById('eventItems').style.display = 'none';
+    document.getElementById('teamMembers').style.display = 'none';
+  }
+  window.onload = function () {
+   
+    updateTable();
+    updateCounterBox();
+    if (localStorage.getItem('config')) {
+        applyConfig(JSON.parse(localStorage.getItem('config')));
+        let storedRegistrations = JSON.parse(localStorage.getItem('registrations')) || [];
+        let storedStartingPoint = localStorage.getItem('startingPoint');
+
+        if (storedRegistrations.length > 0) {
+            registrations = storedRegistrations;
+            let lastEntry = storedRegistrations[storedRegistrations.length - 1];
+            startingPoint = parseInt(lastEntry.id.split('-').pop(), 10) + 1;
+        } else {
+            startingPoint = storedStartingPoint ? parseInt(storedStartingPoint, 10) : 1;
+        }
+    } else {
+        alert('No config found! Please set the required configuration.');
+        window.location.href = "config.html";
+    }
+
+    updateTable();
+    document.getElementById('dataTable').style.display = registrations.length > 0 ? 'table' : 'none';
+    
+    updateCounterBox();
+    saveToLocalStorage();
+    displayItems();
+    
+};
+
+
+function updateTable() {
+    const table = document.getElementById('dataTable');
+    const tbody = table.querySelector('tbody');
+
+    tbody.innerHTML = ''; // Clear previous entries
+
+    if (registrations.length === 0) {
+        table.style.display = 'none'; // Hide table if no entries
+        return;
+    }
+
+    registrations.forEach(registration => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+         <td>${registration.timestamp}</td> <!-- Display timestamp -->
+            <td>${registration.id}</td>
+            <td>${registration.eventName}</td>
+            <td>${registration.itemName}</td>
+            <td>${registration.participants}</td>
+            <td>${registration.phoneNumber}</td>
+            <td>${registration.college}</td>
+            <td>${registration.email}</td>
+            <td>${registration.payment}</td>
+            <td>${registration.mode}</td> 
+        `;
+        tbody.appendChild(row);
+    });
+
+    table.style.display = 'table'; // Show table if entries exist
+}
+
+
+window.onbeforeunload = function () {
+  return "Are you sure you want to leave this page? Unsaved data will be lost. Please export to excel before leaving!!";
+};
+
+document.getElementById('resetButton').addEventListener('click', function () {
+  if (confirm('Are you sure you want to reset the page? This will clear all data.')) {
+    // Clear local storage
+    localStorage.clear();
+    // Reload the page
+    registrations = [];
+    updateTable();
+    updateCounterBox(); // Update the counter box
+    location.reload();
+   
+  }
+});
+
+</script>
+</body>
+</html>
